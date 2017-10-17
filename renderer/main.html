@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <meta charset="UTF-8">
+    <title>Boo</title>
+
+    <!-- link stylesheet -->
+    <link rel="stylesheet" href="../node_modules/bulma/css/bulma.css">
+    <link rel="stylesheet" href="../node_modules/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="main.css">
+
+  </head>
+
+  <body>
+
+    <!-- add/search header -->
+    <div class="panel">
+      <div class="panel-heading">
+        <div class="control is-grouped">
+          <p class="control">
+            <a class="button is-primary open-add-modal">
+              <span class="icon is-small">
+                <i class="fa fa-plus"></i>
+              </span>
+            </a>
+          </p>
+          <p class="control is-expanded has-icon has-icon-right">
+            <input class="input" id="search" type="text">
+            <span class="icon is-small">
+              <i class="fa fa-search"></i>
+            </span>
+          </p>
+        </div>
+    </div>
+
+    <!-- read list -->
+    <div id="read-list" class="empty">
+     <p id="no-items" class="has-text-centered">No Items</p>
+    </div>
+
+    <!-- Enter Url modal window -->
+    <div id="add-modal" class="modal">
+      <div class="modal-background"></div>
+      <div class="modal-content">
+
+        <!-- Enter Url field -->
+        <p class="control has-icon has-icon-right">
+          <input class="input is-medium" id="item-input" type="text" placeholder="Enter URL">
+          <span class="icon">
+            <i class="fa fa-globe"></i>
+          </span>
+        </p>
+
+        <!-- add item/cancel button -->
+        <div class="control is-grouped">
+          <p class="control">
+            <a class="button is-primary" id="add-button">
+              <span class="icon is-small">
+                <i class="fa fa-plus"></i>
+              </span>
+              <span><strong>Add Items</strong></span>
+            </a>
+          </p>
+          <p class="control">
+            <a class="button close-add-modal">Cancel</a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </body>
+
+  <script>
+    //jQuery
+    $ = require('jquery')
+    // main app script
+    require('./app.js')
+  </script>
+</html>
