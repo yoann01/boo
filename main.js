@@ -1,23 +1,22 @@
 //load module
 const {app, ipcMain} = require('electron')
 const mainWindow = require('./mainWindow')
-
+const readItem = require('./readItem')
 
 //require('electron-reload')(__dirname)
 
 //Listen from new read item (comming from app.js)
 ipcMain.on('new-item', (event, itemURL) => {
-  setTimeout( () =>{
-    // identify the sender of the message
-    // and send new ipc message to tha sender
-    event.sender.send('new-item-sucess', 'new read item')
-  }, 2000)
+
+    //get read item with read item module
+    readItem( itemURL, (item) => {
+
+      console.log(item);
+      //send to renderer
+      event.sender.send('new-item-sucess', item)
+    })
 })
 
-
-// This method will be called when Electron has finished
-// initialization and is ready to create browser windows.
-// Some APIs can only be used after this event occurs.
 app.on('ready', mainWindow.createWindow)
 
 // Quit when all windows are closed.

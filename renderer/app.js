@@ -17,9 +17,8 @@ $('#add-button').click( () => {
   if(newItemUrl) {
 
     // Disable modal UI
-
     // get item input, change button to loading
-    // disable cancel butto,n
+    // disable cancel buttonn
     $('#item-input').prop('disabled', true)
     $('#add-button').addClass('is-loading')
     $('.close-add-modal').addClass('is-disabled')

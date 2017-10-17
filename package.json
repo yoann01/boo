@@ -1,7 +1,7 @@
 {
-  "name": "electron-quick-start",
+  "name": "boo",
   "version": "1.0.0",
-  "description": "A minimal Electron application",
+  "description": "bookmark tool",
   "main": "main.js",
   "scripts": {
     "start": "electron ."
@@ -11,10 +11,6 @@
     "url": "https://github.com/yoann01/boo.git"
   },
   "keywords": [
-    "Electron",
-    "quick",
-    "start",
-    "tutorial",
     "demo"
   ],
   "author": "GitHub",
