@@ -37,10 +37,5 @@ module.exports = (url, callback) => {
       bgItemWin.close()
       bgItemWin = null
     })
-
-
-
-
-
   })
 }

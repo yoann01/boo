@@ -11,7 +11,6 @@ ipcMain.on('new-item', (event, itemURL) => {
     //get read item with read item module
     readItem( itemURL, (item) => {
 
-      console.log(item);
       //send to renderer
       event.sender.send('new-item-sucess', item)
     })

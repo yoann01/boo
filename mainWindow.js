@@ -1,6 +1,5 @@
 //modules
 const {BrowserWindow} = require('electron')
-
 const path = require('path')
 const url = require('url')
 
@@ -15,11 +14,9 @@ exports.createWindow = () => {
   this.win = new BrowserWindow({
     width: 500,
     height: 650,
-    minWidth: 500,
+    minWidth: 350,
     maxWidth: 650,
-    minHeight: 650,
-    maxHeight:  650,
-    webPreferences: {textAreasAreResizable: false}
+    minHeight: 310
   })
 
   //enable DevTools

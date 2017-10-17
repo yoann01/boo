@@ -1,5 +1,6 @@
-
 const {ipcRenderer} = require('electron')
+const items = require('./items.js')
+
 // Show add-modal
 $('.open-add-modal').click( () => {
   $('#add-modal').addClass('is-active')
@@ -30,7 +31,15 @@ $('#add-button').click( () => {
 
 // Listen for new item from main process
 ipcRenderer.on('new-item-sucess', (event, item) => {
-  console.log(item)
+
+  //add item to items array
+  items.toreadItems.push(item)
+
+  //save itel to storeage
+  items.saveItems()
+
+  //add item
+  items.addItem(item)
 
   //close and reset modal window
   $('#add-modal').removeClass('is-active')
@@ -43,3 +52,7 @@ ipcRenderer.on('new-item-sucess', (event, item) => {
 $('#item-input').keyup((event) => {
   if(event.key === 'Enter') $('#add-button').click()
 })
+
+// Add items when app loads
+if(items.toreadItems.length)
+  items.toreadItems.forEach(items.addItem)
