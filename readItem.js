@@ -1,7 +1,7 @@
 // module
 const {BrowserWindow} = require('electron')
 
-// browser windpw
+// browser window
 let bgItemWin
 
 //New read item method
@@ -18,7 +18,7 @@ module.exports = (url, callback) => {
   // load read item url
   bgItemWin.loadURL(url)
 
-  //wait for page to finnish loading
+  //wait for page to finish loading
   bgItemWin.webContents.on('did-finish-load', () => {
 
     //get screenshot thumbnails
