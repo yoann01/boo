@@ -15,7 +15,7 @@ $('#add-button').click( () => {
   //get url from input
   let newItemUrl = $('#item-input').val()
 
-  if(newItemUrl) {
+  if (newItemUrl) {
 
     // Disable modal UI
     // get item input, change button to loading
@@ -50,9 +50,9 @@ ipcRenderer.on('new-item-sucess', (event, item) => {
 
 // simulate add click on enter key pressefd
 $('#item-input').keyup((event) => {
-  if(event.key === 'Enter') $('#add-button').click()
+  if (event.key === 'Enter') $('#add-button').click()
 })
 
 // Add items when app loads
-if(items.toreadItems.length)
+if (items.toreadItems.length)
   items.toreadItems.forEach(items.addItem)
