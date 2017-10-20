@@ -12,11 +12,13 @@ exports.createWindow = () => {
   * Initial window options
   */
   this.win = new BrowserWindow({
+    title: 'boo',
     width: 500,
     height: 650,
     minWidth: 350,
     maxWidth: 650,
-    minHeight: 310
+    minHeight: 310,
+    icon: 'icon.png'
   })
 
   //enable DevTools
